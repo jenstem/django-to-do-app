@@ -1,0 +1,6 @@
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" id="name" placeholder="Enter Task">
+    <input type="text" name="priority" id="priority" placeholder="Enter task priority">
+    <input type="submit" value="Submit">
+</form>
