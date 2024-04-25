@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Task
+from django.shortcuts import redirect
 
 
 def add(request):
@@ -9,5 +10,11 @@ def add(request):
 
         task = Task(name=name, priority=priority)
         task.save()
+        return redirect('/')
 
     return render(request, 'myapp/add.html')
+
+
+def index(request):
+    task_list = Task.objects.all()
+    return render(request, 'myapp/index.html', {'task_list': task_list})
