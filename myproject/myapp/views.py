@@ -3,12 +3,19 @@ from .models import Task
 from django.shortcuts import redirect
 from .forms import TodoForm
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 
 
 class TaskListView(ListView):
     model = Task
     template_name = 'myapp/index.html'
     context_object_name = 'task_list'
+
+
+class TaskDetailView(DetailView):
+    model = Task
+    template_name = 'myapp/detail.html'
+    context_object_name = 'task'
 
 
 def index(request):
