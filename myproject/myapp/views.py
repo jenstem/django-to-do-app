@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Task
 from django.shortcuts import redirect
+from .forms import TodoForm
 
 
 def index(request):
@@ -17,9 +18,16 @@ def index(request):
 
 def delete(request, taskid):
     task = Task.objects.get(id=taskid)
-
     if request.method == 'POST':
         task.delete()
         return redirect('/')
-
     return render(request, 'myapp/delete.html', {'task': task})
+
+
+def update(request, id):
+    task = Task.objects.get(id=id)
+    form = TodoForm(request.POST or None, instance=task)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(request, 'myapp/edit.html', {'form': form}, {'task': task})
