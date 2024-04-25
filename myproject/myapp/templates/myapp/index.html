@@ -21,6 +21,9 @@
                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter Task">
                 </div>
                 <div class="form-group">
+                    <input type="date" class="form-control" name="date" id="date">
+                </div>
+                <div class="form-group">
                     <input type="text" class="form-control" name="priority" id="priority"
                         placeholder="Enter task priority">
                 </div>
@@ -35,6 +38,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{task.name}}</h5>
                     <p><b>{{task.priority}}</b></p>
+                    <p><b>{{task.date}}</b></p>
                     <a href="{% url 'delete' task.id %}" class="btn btn-danger">Done</a>
                 </div>
             </div>
