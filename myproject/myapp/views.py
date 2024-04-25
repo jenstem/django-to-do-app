@@ -2,6 +2,13 @@ from django.shortcuts import render
 from .models import Task
 from django.shortcuts import redirect
 from .forms import TodoForm
+from django.views.generic import ListView
+
+
+class TaskListView(ListView):
+    model = Task
+    template_name = 'myapp/index.html'
+    context_object_name = 'task_list'
 
 
 def index(request):
