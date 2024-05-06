@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
-from django.shortcuts import redirect
 from .forms import TodoForm
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
@@ -64,4 +63,4 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect('/')
-    return render(request, 'myapp/edit.html', {'form': form}, {'task': task})
+    return render(request, 'myapp/update.html', {'form': form, 'task': task})

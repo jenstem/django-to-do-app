@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 <div class="container">
     <div class="row">
@@ -44,8 +44,8 @@
             <h4>Tasks to be completed</h4>
             {% for task in task_list %}
             <div class="shadow-lg p-3 mb-1 bg-white rounded">
-                <div class="Card-body">
-                    <h5 class="Card-title">{{task.name}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{task.name}}</h5>
                     <p><b>{{task.priority}}</b></p>
                     <p><b>{{task.date}}</b></p>
                     <a class="btn btn-danger" href="{% url 'delete' task.id %}">Done</a>
@@ -55,6 +55,7 @@
             {% endfor %}
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
