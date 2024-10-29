@@ -4,6 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    Migration class to create the initial Task model.
+
+    Attributes:
+        initial (bool): Indicates if this is the initial migration.
+        dependencies (list): A list of migration dependencies.
+        operations (list): A list of operations to be performed in this migration.
+    """
     initial = True
 
     dependencies = []
