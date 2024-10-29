@@ -5,6 +5,13 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    Migrtion class to add a date field to the Task model.
+
+    Attributes:
+        dependencies (list): A list of migration dependencies.
+        operations (list): A list of operations to be performed in this migration.
+    """
     dependencies = [
         ("myapp", "0001_initial"),
     ]
